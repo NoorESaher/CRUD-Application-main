@@ -5,19 +5,19 @@ const Header = () => {
   return (
     <>
       <header>
-      <h1>Book Management App</h1>
-      <hr />
-      <div className="links">
-        <NavLink to="/" className="link" activeclassname="active" exact>
-          Books List HERE
-        </NavLink>
-        <NavLink to="/add" className="link" activeclassname="active">
-          Add Book
-        </NavLink>
-      </div>
+        <h1>Book Management App</h1>
+        <hr />
+        <div className="links">
+          <NavLink to="/" className="link" activeclassname="active" exact>
+            Books List HERE
+          </NavLink>
+          <NavLink to="/add" className="link" activeclassname="active">
+            Add Book
+          </NavLink>
+        </div>
       </header>
-    
-    
+
+
     </>
   );
 };
