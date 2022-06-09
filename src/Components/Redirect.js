@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 
-function App() {
+function Reducer() {
 
   function reducer(state, action) {
     switch (action.type) {
@@ -33,4 +33,4 @@ function App() {
   )
 }
 
-export default App
+export default Reducer
