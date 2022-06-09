@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header>
+    <>
+      <header>
       <h1>Book Management App</h1>
       <hr />
       <div className="links">
@@ -14,7 +15,10 @@ const Header = () => {
           Add Book
         </NavLink>
       </div>
-    </header>
+      </header>
+    
+    
+    </>
   );
 };
 
