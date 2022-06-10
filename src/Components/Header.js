@@ -13,6 +13,9 @@ const Header = () => {
         <NavLink to="/add" className="link" activeclassname="active">
           Add Book
         </NavLink>
+        <NavLink to="/redirect" className="link" activeclassname="active">
+          Counter Page
+        </NavLink>
       </div>
     </header>
   );
