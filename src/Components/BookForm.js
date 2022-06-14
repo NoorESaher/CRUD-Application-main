@@ -1,8 +1,16 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
+import { useSelector, useDispatch } from "react-redux";  // useSelector is useContext or consumer here
+import { addBook, updateBookAuthor, updateBookName, updateBookPrice, updateBookQuantity } from '../actions/index';
+//import { bindActionCreators } from "redux";
 
 const BookForm = (props) => {
+
+  const myState = useSelector((state) => state.addBook)
+  const dispatch = useDispatch();
+
+
   const [book, setBook] = useState({
     bookname: props.book ? props.book.bookname : "",
     author: props.book ? props.book.author : "",
@@ -19,6 +27,7 @@ const BookForm = (props) => {
     event.preventDefault();
     const values = [bookname, author, price, quantity];
     let errorMsg = "";
+    //console.log(values);
 
     // once we submit the form, the handleOnSubmit method will be called.
     //Inside this method, we're first checking if the user has entered all the details using the every array method:
@@ -26,6 +35,7 @@ const BookForm = (props) => {
       const value = `${field}`.trim();
       return value !== "" && value !== "0";
     });
+
 
     if (allFieldsFilled) {
       const book = {
@@ -82,7 +92,9 @@ const BookForm = (props) => {
             name="bookname"
             value={bookname}
             placeholder="Enter name of book"
-            onChange={handleInputChange}
+            //onChange={handleInputChange}
+            onChange={(e) => dispatch(updateBookName({ bookname: e.target.value }))}
+
           />
         </Form.Group>
         <Form.Group controlId="author">
@@ -93,7 +105,8 @@ const BookForm = (props) => {
             name="author"
             value={author}
             placeholder="Enter name of author"
-            onChange={handleInputChange}
+            onChange={(e) => dispatch(updateBookAuthor({ bookauthor: e.target.value }))}
+
           />
         </Form.Group>
         <Form.Group controlId="quantity">
@@ -104,7 +117,7 @@ const BookForm = (props) => {
             name="quantity"
             value={quantity}
             placeholder="Enter available quantity"
-            onChange={handleInputChange}
+            onChange={(e) => dispatch(updateBookQuantity({ bookquantity: e.target.value }))}
           />
         </Form.Group>
         <Form.Group controlId="price">
@@ -115,10 +128,12 @@ const BookForm = (props) => {
             name="price"
             value={price}
             placeholder="Enter price of book"
-            onChange={handleInputChange}
+            onChange={(e) => dispatch(updateBookPrice({ bookprice: e.target.value }))}
           />
         </Form.Group>
-        <Button variant="primary" type="submit" className="submit-btn">
+        {/* className="submit-btn" */}
+
+        <Button variant="primary" type="submit" title="addbook" className="submit-btn" value={myState} onClick={() => dispatch(addBook())}>
           Submit
         </Button>
       </Form>
