@@ -16,16 +16,20 @@ export const decNumber = () => {
     }
 };
 
-export const addBook = () => {
-    return {
-        type: 'ADDBOOK'
-    }
-}
+// export const addBook = () => {
+// return {
+//         type: 'ADDBOOK'
 
-export const updateBookName = payload => ({ type: "CHANGE_BookName", payload });
-export const updateBookAuthor = payload => ({ type: "CHANGE_BookAuthor", payload });
-export const updateBookQuantity = payload => ({ type: "CHANGE_BookQuantity", payload });
-export const updateBookPrice = payload => ({ type: "CHANGE_BookPrice", payload });
+//     }
+// }
+
+
+export const updateAddBook = payload => ({ type: "CHANGE_AddBook", payload });
+//    export const addBook = payload => ({ type: "CHANGE-AddBook", payload});
+// export const updateBookName = payload => ({ type: "CHANGE_BookName", payload });
+// export const updateBookAuthor = payload => ({ type: "CHANGE_BookAuthor", payload });
+// export const updateBookQuantity = payload => ({ type: "CHANGE_BookQuantity", payload });
+// export const updateBookPrice = payload => ({ type: "CHANGE_BookPrice", payload });
 
 
 
