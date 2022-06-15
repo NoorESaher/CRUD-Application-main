@@ -7,7 +7,7 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 
-store.subscribe(() => console.log(store.getState()));
+//store.subscribe(() => console.log(store.getState()));
 //Subscribe method is change listener for Redux Store
 
 

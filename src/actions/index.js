@@ -4,17 +4,19 @@
 //import store from "../store";
 
 
-export const incNumber = () => {
-    return {
-        type: 'INCREMENT',
-    }
-}
+// export const incNumber = () => {
+//     return {
+//         type: 'INCREMENT'
+//     }
+// }
 
-export const decNumber = () => {
-    return {
-        type: 'DECREMENT'
-    }
-};
+// export const decNumber = () => {
+//     return {
+//         type: 'DECREMENT'
+//     }
+// };
+export const incNumber = payload => ({ type: "INCREMENT", payload });
+export const decNumber = payload => ({ type: "DECREMENT", payload });
 
 // export const addBook = () => {
 // return {
