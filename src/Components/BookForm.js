@@ -6,10 +6,11 @@ import { updateAddBook } from "../actions";
 // import { updateBookAuthor, updateBookName, updateBookPrice, updateBookQuantity } from '../actions/index';
 // import {addBook, updateAddBook} from '../actions/index';
 //import { bindActionCreators } from "redux";
+//import { incNumber, decNumber } from "../actions";
 
 const BookForm = (props) => {
 
-  // const myState = useSelector((state) => state.addBook)
+  // const myState = useSelector((state) => state.incNumber)
   const dispatch = useDispatch();
 
 
@@ -48,7 +49,7 @@ const BookForm = (props) => {
         quantity,
         date: new Date(),
       };
-      // props.handleOnSubmit(book);
+      props.handleOnSubmit(book);
       console.log('book', book);
       dispatch(updateAddBook({ book }))
     } else {
