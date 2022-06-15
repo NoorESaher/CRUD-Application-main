@@ -1,12 +1,21 @@
+import { combineReducers } from "redux";
+import addUserReducer from "./reduxbooks";
 import changeTheNumber from "./upDown";
 
-import { combineReducers } from "redux";
-
-const reducers = combineReducers(
+const rootreducers = combineReducers(
     {
-        //   myNumber:changeTheNumber
-        changeTheNumber
+        //myNumber:changeTheNumber
+        changeTheNumber,
+        addUserReducer,
+
     }
 );
 
-export default reducers;
+// const rootreducers = combineReducers({
+//     addBook: addUserReducer,
+
+
+// });
+
+
+export default rootreducers;

@@ -7,7 +7,8 @@ import store from "./store";
 import { Provider } from "react-redux";
 
 
-store.subscribe(() => console.log(store.getState()));   //Subscribe method is change listener for Redux Store
+//store.subscribe(() => console.log(store.getState()));
+//Subscribe method is change listener for Redux Store
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"))

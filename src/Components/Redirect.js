@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from "react-redux";  // useSelector is useCo
 import { incNumber, decNumber } from '../actions/index';
 
 const Redirect = () => {
-  const myState = useSelector((state) => state.changeTheNumber)
+  const mystate = useSelector((state) => state.changeTheNumber)
   const dispatch = useDispatch();
+  console.log(mystate);
   return (
     <>
       <div className="container">
@@ -13,7 +14,7 @@ const Redirect = () => {
 
         <div className="quantity">
           <button className="quantity_minus" title="Decrement" onClick={() => dispatch(decNumber())}><span> - </span></button>
-          <input name="quantity" type="text" className="quantity_input" value={myState} onChange={() => myState()} />
+          <input name="quantity" type="text" className="quantity_input" value={mystate} onChange={() => mystate()} />
 
           <button className="quantity_plus" title="Increment" onClick={() => dispatch(incNumber())}><span> + </span></button>
 
